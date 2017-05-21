@@ -185,5 +185,5 @@ def main():
   print( '\n{}\n## Total running time = {:3.3} sec.     ##'.format( '#'*40, time.time() - start))
   print( '## Thank you for using me.            ##\n{}'.format('#'*40) )
 
-  if __name__ == '__main__':
+if __name__ == '__main__':
   main()
