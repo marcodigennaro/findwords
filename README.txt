@@ -22,7 +22,7 @@ marcodigennaro@outlook.com
 4.1 Download Word_counter.py to your computer
 4.2 Download scripts.zip and extract files to desired destination
 4.3 Run with 
-    "$python3 Word_counter.py"
+    "$/usr/bin/python3 Word_counter.py"
     or 
     "$chmod +x Word_counter.py" 
     "./Word_counter.py" 
