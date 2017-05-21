@@ -11,6 +11,7 @@ author: M. Di Gennaro
 2.1 README.txt
 2.2 Word_counter.py
 2.3 user_defined_stopwords.txt
+2.4 scripts.zip
 
 ## 3.REQUIREMENTS
 3.1 python3  (sudo apt-get install python3)
@@ -18,22 +19,22 @@ author: M. Di Gennaro
 
 ## 4.RUNNING
 4.1 Download Word_counter.py to your computer
-4.2 Create folder containing text files to read (can be in the same folder containing Word_counter.py)
+4.2 Download scripts.zip and extract files to desired destination
 4.3 Run with 
     "$python3 Word_counter.py"
     or 
     "$chmod +x Word_counter.py" 
     "./Word_counter.py" 
 4.4 The user will be asked to specify:
-4.4.1 The name of the folder containing the files to read (can be ".", or the absolute path, or the relative path)
+4.4.1 The name of the folder containing the files to read (can be "." if it is in the same directory as Word_counter.py, its absolute path, or its relative path)
 4.4.2 The maximum number N of key-words to print in the main_log.txt file
-4.4.3 The maximum number M of key-words to print in the log files relative to single words, couples and triplets of words.
+4.4.3 The maximum number M of key-words to print in the log files relative to key-word type (i.e. single, couple, triplets)
 
 ## 5.OUTPUTS
 5.1 log_main.txt
-For each of the text files in the above specified folder (4.4.1), the N most occurrent key-words are printed before and after removing stopwords and punctuation (N specified in 4.4.2).
+For each text file in the above specified folder (4.4.1), the N most occurrent key-words (4.4.2) are printed before and after removing stopwords and punctuation.
 5.2 log_words.txt, log_couples.txt, log_triplets.txt
-These three files report the M most occurring key-words, reporting the total occurrence and the relative occurrence in each of the text files (M specified in 4.3). 
+These three files report the M most occurring key-words, reporting the total occurrence and the relative occurrence in each of the text files (M specified in 4.4.3). 
 
 ## 6.CUSTOMIZATION
 The user can specify:
