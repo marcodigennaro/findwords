@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """
 Word_counter.py - by M. Di Gennaro - 21/05/2017
 
@@ -39,8 +38,13 @@ except(FileNotFoundError):
 punctuation_list    = ['``', "''", '""', '(', ')', '.', ',', ':', ';', '-', '–', '\'s', '%']
 
 def print_list_of_files( path, suffix ):
-    """prints all files in 'path' ending in 'suffix'"""
-    return ['{}'.format(item) for item in os.listdir( path ) if item.endswith(suffix) ]
+    """prints all files in 'path' ending in 'suffix'
+       neglect files that can be have produced in a previous run (logs)
+       as well as the README.txt and the user_defined_stopwords.txt"""
+    list_of_txt_files = ['{}'.format(item) for item in os.listdir( path ) if item.endswith(suffix) ]
+    files_to_neglect  = ['user_defined_stopwords.txt', 'log_main.txt', 'log_couples.txt', 'README.txt', 'log_triplets.txt', 'log_words.txt']
+    files_to_read     = [ item for item in list_of_txt_files if item not in files_to_neglect ]
+    return (files_to_read)
 
 def choose_valid_integer( var_name ):
     """check that the input from keyboar is an integer"""
@@ -120,9 +124,7 @@ def main():
   main_log = open( os.path.join( main_dir, 'log_main.txt' ), 'w+' )
   ##
   ## BEGIN: read file and store most common words
-  single_word_dict = dict()
-  couples_dict     = dict()
-  triplets_dict    = dict()
+  single_word_dict, couples_dict, triplets_dict = dict(), dict(), dict()
   label_list       = [ 'single word'    , 'couples of words', 'triplets of words' ]
   dict_list        = [  single_word_dict,  couples_dict     ,  triplets_dict      ] 
   log_list         = [ 'log_words.txt'  , 'log_couples.txt' , 'log_triplets.txt'  ] 
@@ -132,7 +134,6 @@ def main():
       head_line    = '\n{}\nreading file: {}\n{}'.format('='*40, text_file, '='*40)
       print( head_line )
       main_log.write( head_line )
-      ## Recognizes all 1-words, 2-words and 3-words 
       all_words_lists, all_counts_lists = words_clusters( str(all_lines) )
       
       ## BEGIN: read file and store most common words
@@ -149,7 +150,7 @@ def main():
           tmp_dict[text_name]  = reduced_items
       ## END: read file and store most common words
   
-  ## BEGING: cross analysis of key-words
+  ## BEGING: cross analysis of key-words in all text files
   print( '\n> File reading complete.\
           \n> Results have been written on "main_log.txt"\
           \n> The program will now count the occourrence of M results in all text.')
@@ -179,12 +180,10 @@ def main():
       tmp_log.write( '\n' )
       tmp_log.close()
       print( '> Cross analysis for most occourring {} stored in "{}"'.format(label, log_name) )
-  ## END:  cross analysis of key-words
-
+  ## END: cross analysis of key-words in all text files
   main_log.close()
   print( '\n{}\n## Total running time = {:3.3} sec.     ##'.format( '#'*40, time.time() - start))
   print( '## Thank you for using me.            ##\n{}'.format('#'*40) )
 
-
-if __name__ == '__main__':
+  if __name__ == '__main__':
   main()
