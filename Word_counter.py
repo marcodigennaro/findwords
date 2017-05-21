@@ -153,7 +153,7 @@ def main():
   ## BEGING: cross analysis of key-words in all text files
   print( '\n> File reading complete.\
           \n> Results have been written on "main_log.txt"\
-          \n> The program will now count the occourrence of M results in all text.')
+          \n> The program will now count the occourrence of M key-words in all text files.')
   max_words = choose_valid_integer('M')
   for dictionary, label, log_name in zip( dict_list, label_list, log_list ): 
       tmp_dict = dict()
