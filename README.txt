@@ -5,7 +5,7 @@ author: M. Di Gennaro
 
 ## 1.README
 1.1 Word_counter.py reads a group of text files and returns the most used key-words in each text file. A key-word can be a single word, a couple or a triplets of words.
-1.2 After checking the most occurring key-word in one document, Word_counter.py checks the occurrence of the most repeated key-words in one text file over all the other files.
+1.2 After checking the most occurring key-word in one document, Word_counter.py checks the occurrence of these expressions in all the other files.
 
 ## 2.CONTENTS
 2.1 README.txt
@@ -13,12 +13,12 @@ author: M. Di Gennaro
 2.3 user_defined_stopwords.txt
 
 ## 3.REQUIREMENTS
-3.1 python3
-3.2 nltk 
+3.1 python3  (sudo apt-get install python3)
+3.2 nltk     (sudo pip3 install -U nltk)
 
 ## 4.RUNNING
 4.1 Download Word_counter.py to your computer
-4.2 Make folder containing text files to read (can be in the same folder containing Word_counter.py)
+4.2 Create folder containing text files to read (can be in the same folder containing Word_counter.py)
 4.3 Run with 
     "$python3 Word_counter.py"
     or 
