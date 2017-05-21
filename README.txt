@@ -1,7 +1,8 @@
-=====================
+==========================
 Word_counter.py
 author: M. Di Gennaro
-=====================
+marcodigennaro@outlook.com
+==========================
 
 ## 1.README
 1.1 Word_counter.py reads a group of text files and returns the most used key-words in each text file. A key-word can be a single word, a couple or a triplets of words.
