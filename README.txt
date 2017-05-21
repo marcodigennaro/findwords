@@ -11,10 +11,10 @@ author: M. Di Gennaro
 2.1 README.txt
 2.2 Word_counter.py
 2.3 user_defined_stopwords.txt
-2.4 scripts.zip
+2.4 scripts.zip 
 
 ## 3.REQUIREMENTS
-3.1 python3  (sudo apt-get install python3)
+3.1 python3  (www.python.org/downloads/)
 3.2 nltk     (sudo pip3 install -U nltk)
 
 ## 4.RUNNING
@@ -27,12 +27,12 @@ author: M. Di Gennaro
     "./Word_counter.py" 
 4.4 The user will be asked to specify:
 4.4.1 The name of the folder containing the files to read (can be "." if it is in the same directory as Word_counter.py, its absolute path, or its relative path)
-4.4.2 The maximum number N of key-words to print in the main_log.txt file
-4.4.3 The maximum number M of key-words to print in the log files relative to key-word type (i.e. single, couple, triplets)
+4.4.2 The number N of key-words per text file to print in the main_log.txt file
+4.4.3 The number M of key-words to print relative to key-word type (i.e. single, couple, triplets).
 
 ## 5.OUTPUTS
 5.1 log_main.txt
-For each text file in the above specified folder (4.4.1), the N most occurrent key-words (4.4.2) are printed before and after removing stopwords and punctuation.
+For each text file in the above specified folder (4.4.1), the N most occurring key-words (4.4.2) are printed before and after removing stopwords and punctuation.
 5.2 log_words.txt, log_couples.txt, log_triplets.txt
 These three files report the M most occurring key-words, reporting the total occurrence and the relative occurrence in each of the text files (M specified in 4.4.3). 
 
@@ -43,4 +43,4 @@ The user can specify the language in the "default_stopwords" variable (default i
 Please refer to the nltk documentation (http://www.nltk.org/). 
 6.2 Punctuation symbols to neglect are listed in "punctuation_list"
 6.3 The suffix of the text file to read (default is "suffix" = ".txt")
-6.4 Read alphanumeric or alphabetic characthers only (default is "allowed_char" = alphanumeric)
+6.4 Read alphanumeric or alphabetic characters only (default is "allowed_char" = alphanumeric)
